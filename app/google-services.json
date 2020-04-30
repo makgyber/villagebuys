@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923378493331",
+    "firebase_url": "https://villagebuys-13fa9.firebaseio.com",
+    "project_id": "villagebuys-13fa9",
+    "storage_bucket": "villagebuys-13fa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923378493331:android:c51b05b5d6065296c0ea66",
+        "android_client_info": {
+          "package_name": "com.makgyber.villagebuys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923378493331-rfhe2sbdm7qobe1j8hosm32qkejgilhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj1Sr7bShG5Z2z_srMjUIZhnLKptSdWyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923378493331-rfhe2sbdm7qobe1j8hosm32qkejgilhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
