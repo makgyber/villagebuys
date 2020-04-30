@@ -78,9 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 startActivity(new Intent(LoginActivity.this, Home.class));
-
+                finish();
             } else {
-
                 Toast.makeText(LoginActivity.this, ""+response.getError().getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
