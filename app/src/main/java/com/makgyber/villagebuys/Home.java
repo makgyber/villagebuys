@@ -31,6 +31,11 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mAuth = FirebaseAuth.getInstance();
 
+        initializeHome();
+
+    }
+
+    private void initializeHome() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -52,7 +57,6 @@ public class Home extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
     }
 
 
