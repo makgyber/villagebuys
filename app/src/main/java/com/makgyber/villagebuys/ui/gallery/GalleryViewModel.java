@@ -6,14 +6,16 @@ import androidx.lifecycle.ViewModel;
 
 public class GalleryViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<String> mTindahanName;
+    private MutableLiveData<String> mAddress;
+    private MutableLiveData<String> mContactInfo;
+    private MutableLiveData<String> mServiceArea;
+
 
     public GalleryViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
+        mTindahanName = new MutableLiveData<>();
+        mAddress = new MutableLiveData<>();
+        mContactInfo = new MutableLiveData<>();
+        mServiceArea = new MutableLiveData<>();
     }
 }

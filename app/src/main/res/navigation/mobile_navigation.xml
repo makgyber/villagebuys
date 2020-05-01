@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.makgyber.villagebuys.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Marketplace"
         tools:layout="@layout/fragment_home">
 
     </fragment>
@@ -16,13 +16,13 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.makgyber.villagebuys.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Tindahan"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.makgyber.villagebuys.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Inventory"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
