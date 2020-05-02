@@ -3,6 +3,7 @@ package com.makgyber.villagebuys;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -20,18 +21,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bottomNavigationView.inflateMenu(R.menu.bottom_navigation);
+
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_menu);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -65,5 +66,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng manila = new LatLng(14.599512, 120.984222);
         mMap.addMarker(new MarkerOptions().position(manila).title("Marker in manila"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(manila, 12.0f));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mAuth.getCurrentUser() == null) {
+            sendToLogin();
+        }
+    }
+
+    private void sendToLogin() {
+        startActivity(new Intent(MapsActivity.this, LoginActivity.class));
+        finish();
     }
 }
