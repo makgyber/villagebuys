@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(LoginActivity.this, Home.class));
+                    startActivity(new Intent(LoginActivity.this, MapsActivity.class));
                     finish();
                 } else {
                     setupSignInUI();

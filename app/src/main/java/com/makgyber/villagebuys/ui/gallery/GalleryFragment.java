@@ -100,6 +100,7 @@ public class GalleryFragment extends Fragment {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(getActivity(), "Tindahan saved", Toast.LENGTH_SHORT).show();
+                                addProducts();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -140,61 +141,61 @@ public class GalleryFragment extends Fragment {
     private void addProducts() {
         CollectionReference product = db.collection("product");
         String tindahanId = "tindahan" + mAuth.getCurrentUser().getUid();
-        String tindahanName = "Tindahan ni " + mAuth.getCurrentUser().getDisplayName();
+        String tindahanName = mTindahanName.getText().toString();
 
         Map<String, Object> data1 = new HashMap<>();
-        data1.put("product_name", "Bananas");
+        data1.put("productName", "Bananas");
         data1.put("description", "Imported from DOLE Mindanao");
         data1.put("price", 200);
-        data1.put("tindahan_name", tindahanName);
-        data1.put("tindahan", tindahanId);
+        data1.put("tindahanName", tindahanName);
+        data1.put("tindahanId", tindahanId);
         data1.put("publish", true);
         data1.put("tags", Arrays.asList("fruits", "bananas", "fresh produce", "saging"));
-        data1.put("service_area", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
+        data1.put("serviceArea", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
         product.document().set(data1);
 
         Map<String, Object> data2 = new HashMap<>();
-        data2.put("product_name", "Apples");
+        data2.put("productName", "Apples");
         data2.put("description", "1 dozen red washington apples");
         data2.put("price", 590);
-        data2.put("tindahan_name", tindahanName);
-        data2.put("tindahan", tindahanId);
+        data2.put("tindahanName", tindahanName);
+        data2.put("tindahanId", tindahanId);
         data2.put("publish", true);
         data2.put("tags", Arrays.asList("fruits", "apples", "fresh produce", "mansanas"));
-        data2.put("service_area", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
+        data2.put("serviceArea", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
         product.document().set(data2);
 
         Map<String, Object> data3 = new HashMap<>();
-        data3.put("product_name", "Face Masks");
+        data3.put("productName", "Face Masks");
         data3.put("description", "Box of 50. Imported from China");
         data3.put("price", 840);
-        data3.put("tindahan_name", tindahanName);
-        data3.put("tindahan", tindahanId);
+        data3.put("tindahanName", tindahanName);
+        data3.put("tindahanId", tindahanId);
         data3.put("publish", true);
         data3.put("tags", Arrays.asList("safety", "medical supplies", "face masks", "facemask"));
-        data3.put("service_area", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
+        data3.put("serviceArea", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
         product.document().set(data3);
 
         Map<String, Object> data4 = new HashMap<>();
-        data4.put("product_name", "Lysol Spray");
+        data4.put("productName", "Lysol Spray");
         data4.put("description", "100g Lysol brand disinfectant spray");
         data4.put("price", 100);
-        data4.put("tindahan_name", tindahanName);
-        data4.put("tindahan", tindahanId);
+        data4.put("tindahanName", tindahanName);
+        data4.put("tindahanId", tindahanId);
         data4.put("publish", true);
         data4.put("tags", Arrays.asList("safety", "medical supplies", "disinfectant", "spray", "lysol"));
-        data4.put("service_area", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
+        data4.put("serviceArea", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
         product.document().set(data4);
 
         Map<String, Object> data6 = new HashMap<>();
-        data6.put("product_name", "Green Cross Alcohol");
+        data6.put("productName", "Green Cross Alcohol");
         data6.put("description", "70% Isopropyl Alcohol 200ml green bottle");
         data6.put("price", 40);
-        data6.put("tindahan_name", tindahanName);
-        data6.put("tindahan", tindahanId);
+        data6.put("tindahanName", tindahanName);
+        data6.put("tindahanId", tindahanId);
         data6.put("publish", true);
         data6.put("tags", Arrays.asList("safety", "medical supplies", "disinfectant", "alcohol", "isopropyl"));
-        data6.put("service_area", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
+        data6.put("serviceArea", Arrays.asList("Las Pinas", "Pasay", "Paranaque"));
         product.document().set(data6);
     }
 }

@@ -12,6 +12,10 @@ public class Tindahan {
     private ArrayList<String> serviceArea;
 
 
+    public Tindahan() {
+        //need empty constructor
+    }
+
     public Tindahan(String tindahanId, String tindahanName, String owner, String contactInfo, String address, Boolean publish, ArrayList<String> serviceArea) {
         this.tindahanId = tindahanId;
         this.tindahanName = tindahanName;
