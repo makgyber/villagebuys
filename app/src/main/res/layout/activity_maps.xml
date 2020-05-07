@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,11 +39,22 @@
         </RelativeLayout>
 
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+    <TextView
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:text="Found 20 items matching your search"
+        android:layout_above="@+id/map_products_fragment"
+        android:background="#FFFFFFFF"/>
+
+    <fragment android:name="com.makgyber.villagebuys.MapProductFragment"
+        android:id="@+id/map_products_fragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/bottom_navigation_menu"/>
 
 
 
@@ -51,6 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation"
         android:padding="12px"
         app:labelVisibilityMode="labeled"
@@ -59,4 +71,4 @@
         android:id="@+id/bottom_navigation_menu"
         />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
